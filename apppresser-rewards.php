@@ -4,7 +4,7 @@
  * Description:       Customer Rewards system for AppPresser Apps.
  * Requires at least: 6.5
  * Requires PHP:      7.4
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:          AppPresser
  * Author URI:      https://apppresser.com
  * Plugin URI:      https://apppresser.com
@@ -30,6 +30,7 @@ function apppresser_rewards_block_init() {
 	$blocks = array(
 		'rewards'        => '',
 		'qrcode'      => '',
+		'user-rewards' => '',
 	);
 
 	foreach ( $blocks as $dir => $render_callback ) {
