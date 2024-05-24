@@ -246,7 +246,7 @@ AppPresser_Rewards();
  */
 if ( is_admin() ) {
 
-	function bprest_updater() {
+	function apppresser_rewards_updater() {
 
 		require 'plugin-update/plugin-update-checker.php';
 		$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
@@ -259,5 +259,5 @@ if ( is_admin() ) {
 		$myUpdateChecker->setBranch( 'main' );
 		$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 	}
-	bprest_updater();
+	apppresser_rewards_updater();
 }
