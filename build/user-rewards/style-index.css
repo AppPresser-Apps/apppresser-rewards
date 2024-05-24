@@ -8,6 +8,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-apppresser-user-rewards {
+  max-width: 980px;
   margin: 40px 0;
 }
 
