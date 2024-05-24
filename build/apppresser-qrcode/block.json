@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "apppresser/apppresser-qrcode",
+  "version": "1.0.0",
+  "title": "Apppresser Qrcode",
+  "category": "widgets",
+  "icon": "grid-view",
+  "description": "QR Code genertator.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "default": ""
+    },
+    "size": {
+      "type": "number",
+      "default": 150
+    },
+    "color": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "margin": {
+      "type": "number",
+      "default": 4
+    },
+    "qrType": {
+      "type": "string",
+      "default": "url"
+    },
+    "qrValue": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "apppresser-qrcode",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

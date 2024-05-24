@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "apppresser/rewards",
+  "version": "0.1.0",
+  "title": "Rewards",
+  "category": "widgets",
+  "icon": "star-filled",
+  "description": "Customer rewards and QR Codes.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "multiple": false
+  },
+  "attributes": {
+    "rewardsTitle": {
+      "type": "string",
+      "default": "Rewards"
+    },
+    "rewardsDescription": {
+      "type": "string",
+      "default": "Earn points for every purchase and redeem them for discounts."
+    },
+    "type": {
+      "type": "string",
+      "default": "image"
+    }
+  },
+  "textdomain": "apppresser-rewards",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
