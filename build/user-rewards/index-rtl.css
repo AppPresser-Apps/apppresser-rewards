@@ -10,7 +10,7 @@
   border: 1px solid #000;
   background-color: #fff;
   padding: 20px;
-  max-width: 980px;
+  max-width: 680px !important;
 }
 
 .wp-block-apppresser-user-rewards .section-header {
