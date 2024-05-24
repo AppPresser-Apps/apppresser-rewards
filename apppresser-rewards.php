@@ -4,7 +4,7 @@
  * Description:       Customer Rewards system for AppPresser Apps.
  * Requires at least: 6.5
  * Requires PHP:      7.4
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:          AppPresser
  * Author URI:      https://apppresser.com
  * Plugin URI:      https://apppresser.com
