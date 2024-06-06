@@ -4,7 +4,7 @@
  * Description:       Customer Rewards system for AppPresser Apps.
  * Requires at least: 6.5
  * Requires PHP:      7.4
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:          AppPresser
  * Author URI:      https://apppresser.com
  * Plugin URI:      https://apppresser.com
@@ -28,8 +28,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function apppresser_rewards_block_init() {
 	$blocks = array(
-		'rewards'        => '',
-		'qrcode'      => '',
+		'rewards'      => '',
+		'qrcode'       => '',
 		'user-rewards' => '',
 	);
 
@@ -171,17 +171,18 @@ if ( ! class_exists( 'AppPresser_Rewards' ) ) {
 			global $AppPresser_Rewards_options;
 
 			require_once APPPRESSER_REWARDS_DIR . 'includes/post-type.php';
+			require_once APPPRESSER_REWARDS_DIR . 'includes/cron.php';
 
-			//require_once APPPRESSER_REWARDS_DIR . 'includes/actions.php';
-			//require_once APPPRESSER_REWARDS_DIR . 'includes/filters.php';
-			//require_once APPPRESSER_REWARDS_DIR . 'includes/helper-functions.php';
-			//require_once APPPRESSER_REWARDS_DIR . 'includes/scripts.php';
-			//require_once APPPRESSER_REWARDS_DIR . 'includes/api.php';
+			// require_once APPPRESSER_REWARDS_DIR . 'includes/actions.php';
+			// require_once APPPRESSER_REWARDS_DIR . 'includes/filters.php';
+			// require_once APPPRESSER_REWARDS_DIR . 'includes/helper-functions.php';
+			// require_once APPPRESSER_REWARDS_DIR . 'includes/scripts.php';
+			// require_once APPPRESSER_REWARDS_DIR . 'includes/api.php';
 
-			//if ( is_admin() ) {
-				//require_once APPPRESSER_REWARDS_DIR . 'includes/admin/dashboard-widgets.php';
-			//}
-        }
+			// if ( is_admin() ) {
+				// require_once APPPRESSER_REWARDS_DIR . 'includes/admin/dashboard-widgets.php';
+			// }
+		}
 
 
 		/**

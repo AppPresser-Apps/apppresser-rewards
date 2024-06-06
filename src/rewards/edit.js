@@ -111,7 +111,7 @@ export default function Edit({attributes, setAttributes}) {
 						}
 					}, 
 					[
-						['core/image',{"id":25585,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none", "url":"/wp-content/uploads/2017/10/halopub19-85-edited-1000x667-1-jpg.webp", "alt":"Rewards Image"} ],
+						['core/image',{"id":25585,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none", "url":"/wp-content/uploads/image.png", "alt":"Rewards Image"} ],
 						['apppresser/qrcode'],
 					]
 				],

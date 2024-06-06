@@ -10,31 +10,49 @@
 <div <?php echo get_block_wrapper_attributes(); ?>>
 <h3><?php echo $attributes['rewardTitle']; ?></h3>
 
-<?php 
+<?php
 	$args = array(
-		'post_type' => 'reward',
-		'post_status' => 'any',
+		'post_type'      => 'reward',
+		'post_status'    => array( 'publish' ),
 		'posts_per_page' => 100,
-		'tax_query' => array(
+		'tax_query'      => array(
 			array(
 				'taxonomy' => 'reward-category',
-				'field' => 'slug',
-				'terms' => $attributes['rewardType'],
+				'field'    => 'slug',
+				'terms'    => $attributes['rewardType'],
 			),
 		),
 	);
 
-	$query = new WP_Query($args);
+	$query = new WP_Query( $args );
 
-	if ($query->have_posts()) {
-		while ($query->have_posts()) {
+	if ( $query->have_posts() ) {
+
+		while ( $query->have_posts() ) {
 			$query->the_post();
-			echo the_content();
+
+			// Get the ACF field value
+			$dates = get_field( 'reward_dates' );
+
+			if ( ! empty( $dates['valid_from'] ) && ! empty( $dates['valid_to'] ) ) {
+
+				$current_date = strtotime( gmdate( 'Y-m-d' ) );
+				$from_date    = strtotime( gmdate( $dates['valid_from'] ) );
+				$to_date      = strtotime( gmdate( $dates['valid_to'] ) );
+
+				if ( $current_date > $from_date && $current_date < $to_date ) {
+					echo the_content();
+				} else {
+					echo $attributes['rewardMessage'];
+				}
+			} else {
+				echo $attributes['rewardMessage'];
+			}
 		}
 		wp_reset_postdata();
 	} else {
 		echo $attributes['rewardMessage'];
 	}
-?>
+	?>
 	
 </div>

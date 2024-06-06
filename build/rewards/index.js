@@ -178,7 +178,7 @@ function Edit({
     "scale": "cover",
     "sizeSlug": "full",
     "linkDestination": "none",
-    "url": "/wp-content/uploads/2017/10/halopub19-85-edited-1000x667-1-jpg.webp",
+    "url": "/wp-content/uploads/image.png",
     "alt": "Rewards Image"
   }], ['apppresser/qrcode']]]]]];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
