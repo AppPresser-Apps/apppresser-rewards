@@ -43,9 +43,6 @@ if ( ! is_user_logged_in() ) {
 			$all_users = get_field( 'all_users' );
 			$users     = get_field( 'users' );
 
-			error_log( print_r( $all_users, true ) );
-			error_log( print_r( $users, true ) );
-
 			if ( ! empty( $dates['valid_from'] ) && ! empty( $dates['valid_to'] ) ) {
 
 				$current_date = strtotime( gmdate( 'Y-m-d' ) );
