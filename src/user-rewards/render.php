@@ -10,6 +10,13 @@
 <div <?php echo get_block_wrapper_attributes(); ?>>
 <h3><?php echo $attributes['rewardTitle']; ?></h3>
 
+
+<?php
+if ( ! is_user_logged_in() ) {
+	return;
+}
+?>
+
 <?php
 	$args = array(
 		'post_type'      => 'reward',
@@ -32,7 +39,12 @@
 			$query->the_post();
 
 			// Get the ACF field value
-			$dates = get_field( 'reward_dates' );
+			$dates     = get_field( 'reward_dates' );
+			$all_users = get_field( 'all_users' );
+			$users     = get_field( 'users' );
+
+			error_log( print_r( $all_users, true ) );
+			error_log( print_r( $users, true ) );
 
 			if ( ! empty( $dates['valid_from'] ) && ! empty( $dates['valid_to'] ) ) {
 
@@ -41,7 +53,10 @@
 				$to_date      = strtotime( gmdate( $dates['valid_to'] ) );
 
 				if ( $current_date > $from_date && $current_date < $to_date ) {
-					echo the_content();
+
+					if ( $all_users || ( is_array( $users ) && in_array( get_current_user_id(), $users, true ) ) ) {
+						echo the_content();
+					}
 				} else {
 					echo $attributes['rewardMessage'];
 				}
